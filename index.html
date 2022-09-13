@@ -47,10 +47,10 @@
     </header>
     <main>
       <section class="section first-bgc">
-        <div class="overlay">
+        <div class="overlay-main">
           <div class="main-text">
             <h1 class="main-title">Ефективні рішення для<br />вашого бізнесу</h1>
-            <button type="button" class="button">Замовити послугу</button>
+            <button type="button" class="button" data-modal-open>Замовити послугу</button>
           </div>
         </div>
       </section>
@@ -448,6 +448,7 @@
           </ul>
         </div>
       </section>
+      
     </main>
     <footer>
       <div class="container footer-container">
@@ -517,5 +518,13 @@
       </div>
       </div>
     </footer>
+    <div class="back-drop is-hidden" data-modal>
+      <div class="modal">
+            
+         <svg class="modal-close" width="18px" height="18px" data-modal-close> <use href="./images/icons.svg#close"></use></svg>
+        
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
