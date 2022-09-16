@@ -61,6 +61,7 @@ img {
 /* Header */
 
 .page-header {
+  
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -99,10 +100,34 @@ img {
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
+  transition-duration: 250ms; 
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .link.current {
   color: var(--accent-color);
+}
+
+.site-nav {
+  position: relative;
+}
+
+.link {
+  position: relative;
+}
+
+.current::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  bottom: 0;
+  background-color: var(--accent-color);
+  display: inline-block;
+  border-radius: 2px;
+  bottom: -1.5%;
+  
 }
 
 .site-nav a {
@@ -114,6 +139,8 @@ img {
 .auth-nav .auth:hover,
 .auth-nav .auth:focus {
   color: var(--accent-color);
+  transition-duration: 250ms; 
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .auth-nav {
@@ -149,6 +176,8 @@ img {
 
 .auth-item:hover .icon-svg {
   fill: var(--accent-color);
+  transition-duration: 250ms; 
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .auth:focus .icon-svg {
@@ -169,6 +198,7 @@ img {
 /* Index main content */
 
 .first-bgc {
+  
   background-color: var(--bgc-dark);
   text-align: center;
   height: 600px;
@@ -216,6 +246,7 @@ img {
 .button {
   cursor: pointer;
   border: none;
+
 }
 
 .list-benefits {
@@ -345,11 +376,15 @@ img {
 .social-link:hover,
 .social-link:focus {
   background-color: var(--accent-color);
+  transition-duration: 250ms; 
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover .social-icon,
 .social-link:focus .social-icon {
   fill: var(--title-text-color);
+  transition-duration: 250ms; 
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-title {
@@ -398,11 +433,15 @@ img {
 .client-link:hover,
 .client-link:focus {
   border-color: var(--accent-color);
+  transition-duration: 250ms; 
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link:hover .social-icon,
 .client-link:focus .social-icon {
   fill: var(--accent-color);
+  transition-duration: 250ms; 
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   
 }
 
@@ -513,6 +552,8 @@ footer {
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+    transition-duration: 250ms; 
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .buttons {
@@ -649,6 +690,8 @@ text-align: left;
 
 .project-link:hover .overlay {
   transform: translateY(0);
+  transition-duration: 250ms; 
+   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   
   
 }
@@ -664,11 +707,14 @@ text-align: left;
   left: 0;
   background-color: rgba(0, 0, 0, 0.2);
   
+  
 }
 
 .back-drop.is-hidden {
   opacity: 0;
   pointer-events: none;
+  visibility: hidden;
+  
 }
 
 .modal {
@@ -676,15 +722,48 @@ text-align: left;
   height: 581px;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 50%; 
   transform: translate(-50%, -50%);
   background-color: #fff;
   border-radius: 4px;
 }
 
+.modal-animation {
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: modal-start 5000ms both;
+}
 
 
-.modal-close{
+
+@keyframes modal-start {
+  0% {
+  opacity: 0;
+  transform: translateX(-1000px) scale(0.5);
+  }
+  100% {
+   opacity: 1;
+   transform: translateX(0) scale(1);  
+  }
+}
+
+
+ .modal-close{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: rgba(0, 0, 0, 1);
+  
+} 
+
+.modal-button-close {
+  width: 30px;
+  height: 30px;
   position: absolute;
   top: 8px;
   right: 8px;
@@ -693,4 +772,5 @@ text-align: left;
   border: 1px solid rgba(0, 0, 0, 0.1);
   fill: rgba(0, 0, 0, 1);
   cursor: pointer;
+  
 }
